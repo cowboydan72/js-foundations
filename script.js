@@ -25,11 +25,8 @@
             }
             
             //Prints computer choice
-            console.log(computerChoice)
+            return computerChoice
             }
-
-        //Run computer choice function
-        getComputerChoice()
 
     //Get player's choice with prompt
         //Declare function
@@ -37,17 +34,37 @@
 
             //Prompt user for choice
             humanChoice = prompt("Rock, Paper, or Scissors?")
-            console.log(humanChoice)
-    
 
+            //Prints human choice
+            return humanChoice
         }
-
-        //Run human choice function
-        getHumanChoice()
+        
 
     //Single round logic
         //Declare function
         function playRound(humanChoice, computerChoice) {
+
+            //Declare computer win
+            if ((computerChoice === "Rock" && humanChoice === "Scissors")
+            || (computerChoice === "Paper" && humanChoice === "Rock")
+            || (computerChoice === "Scissors" && humanChoice === "Paper")) {
+               winner = ("You lose! " + computerChoice + " beats " + humanChoice)
+            
+            }                
+
+            //Declare human win
+            else if ((humanChoice === "Rock" && computerChoice === "Scissors")
+                 || (humanChoice === "Paper" && computerChoice === "Rock")
+                 || (humanChoice === "Scissors" && computerChoice === "Paper")) {
+                    winner = ("You win! " + humanChoice + " beats " + computerChoice)
+                }
+            //Declare tie
+            else {
+                winner = ("It's a tie!")
+            }
+
+            //Prints winner text
+            return winner
             
         }
     
@@ -57,5 +74,6 @@
 
     //Run a single round
     playRound(humanSelection, computerSelection);
+    console.log(winner)
         
 
