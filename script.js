@@ -35,10 +35,10 @@
             //Prompt user for choice
             humanChoice = prompt("Rock, Paper, or Scissors?")
 
-            //Prints human choice
-            return humanChoice
+            //Prints human choice with proper punctuation
+            return String(humanChoice).charAt(0).toUpperCase() + String(humanChoice).slice(1).toLowerCase();
+            
         }
-        
 
     //Single round logic
         //Declare function
